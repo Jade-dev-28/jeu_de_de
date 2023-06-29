@@ -43,6 +43,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
     margin: 100px auto 0;
   }
 
+
+
+
+
+  /*________________CUBE_______*/
   .cube {
     width: 100%;
     height: 100%;
@@ -58,32 +63,32 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   }
 
   .top {
-    background-color: rebeccapurple;
+    background-image: url(images/face1.png);
     transform: rotateX(90deg) translateZ(100px);
   }
 
   .bottom {
-    background-color: rebeccapurple;
+    background-image: url(images/face6.png);
     transform: rotateX(-90deg) translateZ(100px);
   }
   
   .right {
-    background-color: rebeccapurple;
+    background-image: url(images/face5.png);
     transform: rotateY(90deg) translateZ(100px);
   }
 
   .left {
-    background-color: rebeccapurple;
+    background-image: url(images/face3.png);
     transform: rotateY(-90deg) translateZ(100px);
   }
 
   .front {
-    background-color: rebeccapurple;
+    background-image:url(images/face2.png);
     transform: rotateX(0deg) translateZ(100px);
   }
 
   .back {
-    background-color: rebeccapurple;
+    background-image:url(images/face4.png);
     transform: rotateX(-180deg) translateZ(100px);
   }
    
@@ -95,3 +100,46 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
     transform: rotateX(360deg) rotateY(360deg);
   }
 }
+
+/*________Bouton Jouer______*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+    .bouton_jouer{
+      display: flex;
+      justify-content: center;
+      margin: 200px;
+    }
+
+
+    .btn{
+    
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0066CC;
+    padding: 10px 30px;
+    border: 2px solid #0066cc;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    width: 200px;
+    justify-content: center;
+    }
+    
+    .btn:hover{
+    
+    transition : 1000ms;
+    padding: 10px 50px;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #0066cc;
+    border: solid 2px #0066cc;
+    }
+    
+    
+    
