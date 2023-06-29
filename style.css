@@ -1,0 +1,97 @@
+body{
+margin: 0;
+height: 100%;
+width: 100%;
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  #navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: #5ba5e1;
+    color: white;
+  }
+
+  .container {
+    width: 200px ;
+    height: 200px;
+    perspective: 1000px; /*distance par rapport à l'écran*/
+    margin: 100px auto 0;
+  }
+
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 15s infinite linear;
+  }
+  
+  .face {
+    position: absolute;
+    width: 200px;
+    height:200px;
+  }
+
+  .top {
+    background-color: rebeccapurple;
+    transform: rotateX(90deg) translateZ(100px);
+  }
+
+  .bottom {
+    background-color: rebeccapurple;
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+  
+  .right {
+    background-color: rebeccapurple;
+    transform: rotateY(90deg) translateZ(100px);
+  }
+
+  .left {
+    background-color: rebeccapurple;
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+
+  .front {
+    background-color: rebeccapurple;
+    transform: rotateX(0deg) translateZ(100px);
+  }
+
+  .back {
+    background-color: rebeccapurple;
+    transform: rotateX(-180deg) translateZ(100px);
+  }
+   
+  @keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0px);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
