@@ -2,18 +2,25 @@ body{
 margin: 0;
 height: 100%;
 width: 100%;
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background-color: #003459;
 }
 .header {
-    background-color: #f1f1f1;
+    background-color: #007ea7;
     padding: 30px;
     text-align: center;
   }
+
+h1{
+  font-family:'Rock 3D', cursive;
+  font-size: 50px;
+}
   
   #navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color:#00171f;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   
   #navbar a {
@@ -184,7 +191,10 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
 
 /*_____Section joueurs___*/
 
+h2 {
+font-family: 'Rock 3D', cursive;
 
+}
 .element_jeu{
 
   height: 100%;
@@ -216,17 +226,18 @@ display:flex;
 flex-direction: column;
 justify-content:space-around;
 align-items: center;
+
 }
 
 #current1, #current2{
 width:40%;
 height: 100px;
-  background-color: red;
+  background-color: white;
 }
 
 .section_de{
 
-background-color: #333;
+background-color:#6096ba;
 width: 50%;
 display: flex;
  flex-direction: column;
@@ -249,14 +260,13 @@ align-items: center;
 .compteur{
   height: 100px;
   width: 100px;
-  background-color: #ddd;
+  
 }
 
 
 /*_______Bouton lancer dé____*/
 a.my-button{
-  background: linear-gradient(to right,#196BCA ,#6433E0);
-  background-color: #196BCA;
+  background-color:#6096ba ;
   color: #fff;
   font-family: Trebuchet MS;
   font-size: 18px;
@@ -269,6 +279,7 @@ a.my-button{
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
  }
  a.my-button span{
   margin-right: 15px;
@@ -288,6 +299,34 @@ a.my-button{
   transform: scale(0.95);
  }
 
+.footer{
+  width: 100%;
+  height: 100px;
+  margin-top: 120px;
+  background-color: #000000;
+}
+
+
+
+/*____________Page Régles du Jeu____________*/
+
+.element_regles {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.regles_jeu{
+  width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 100px;
+    color: #f2f2f2;
+}
 
 
 

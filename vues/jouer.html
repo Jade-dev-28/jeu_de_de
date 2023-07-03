@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="../assets/js/script.js"></script>
+    
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
     <title>Jeu de dé</title>
 </head>
 <body>
@@ -21,7 +24,7 @@
             <div id="navbar">
                 <a class="active" href="../index.html">Accueil</a>
                 <a href="../vues/jouer.html">Jouer</a>
-                <a href="javascript:void(0)">Règle</a>
+                <a href="../vues/regle.html">Règles du jeu</a>
               </div>
         </nav>
 
@@ -43,7 +46,7 @@
                 <div class="section_joueurs">
          <!------------Joueur 1--------->
                     <div class="joueur_1">
-                        <p>Joueur 1</p>
+                        <h2>Joueur 1</h2>
                         <div class="score_1"></div> 
 
                         <div id="current1" class="container_joueur1">
@@ -55,16 +58,16 @@
                     <div class="section_de">
 
 
-                        <div class="compteur"></div>
+                        <div class="compteur"><img src="../images/dice-1.svg" alt="" id="des"></div>
                         
-                        <a class="my-button" href="#"  onclick="NombreAleatoire()"> <span class="iconify" data-icon="ion:dice" data-width="30"></span>Lancer le dé</a>
-                        <button onclick="hold()"> Garder</button>
+                        <a class="my-button" id="lancerde"> <span class="iconify" data-icon="ion:dice" data-width="30"></span>Lancer le dé</a>
+                        <button> Garder</button>
 
                     </div>
 
 
                     <div class="joueur_2">
-                        <p>Joueur 2</p>
+                        <h2>Joueur 2</h2>
                         <div class="score_1"></div> 
 
                         <div id="current2" class="container_joueur2">
@@ -81,9 +84,13 @@
 
     </main>
 
-    <footer></footer>
+    <footer>
+        <div class="footer">
+
+        </div>
+    </footer>
 
 
-
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
