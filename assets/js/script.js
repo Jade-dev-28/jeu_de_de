@@ -84,7 +84,8 @@ document.querySelector('.joueur_2 h2').textContent = "Joueur 2";
 
 
  //Fonction qui permet d'afficher l'icone du joueur actif 
- function updateActivePlayerIcon() {
+ 
+ /*function updateActivePlayerIcon() {
   var iconPlayer1 = document.getElementById('iconPlayer1');
   var iconPlayer2 = document.getElementById('iconPlayer2');
 
@@ -106,6 +107,7 @@ document.querySelector('.joueur_2 h2').textContent = "Joueur 2";
 
 
 
+
 function switchPlayer() {
   document.getElementById('current' + currentPlayer).textContent = "Score actuel : 0";
   currentPlayer = currentPlayer === 1 ? 2 : 1;
@@ -114,4 +116,4 @@ function switchPlayer() {
 
   updateActivePlayerIcon();
 }
-
+*/

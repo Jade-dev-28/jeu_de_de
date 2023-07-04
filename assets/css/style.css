@@ -308,7 +308,7 @@ a.my-button{
 
 
 
-/*____________Page Régles du Jeu____________*/
+/*____________Régles du Jeu____________*/
 
 .element_regles {
   display: flex;
@@ -333,6 +333,28 @@ a.my-button{
 
  /*___________VERSION MOBILE__________*/
  @media only screen and (max-width: 767px) {
+
+  body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #003459;
+    }
+
+
+/*____PAGE ACCUEIL____*/
+  .regles_jeu{
+    width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+      color: #f2f2f2;
+  }
+  
+
+
   .cube {
     width: 100%;
     height: 100%;
@@ -378,5 +400,79 @@ a.my-button{
     background-image:url(../../images/face4.png);
     transform: rotateX(-180deg) translateZ(100px);
   }
+
+
+/*______PAGE JOUER_____*/
+
+.element_jeu{
+
+  height: 100%;
+  width: 100%;
+
+}
+    
+.section_jeu {
+  background-color: #fff;
+  width: 90%;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+ /* justify-content: space-between;*/
+
+}
+
+.section_joueurs{
+width: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.joueur_1, .joueur_2{
+  width: 100%;
+background-color: #5ba5e1;
+display:flex;
+flex-direction: column;
+justify-content:space-around;
+align-items: center;
+
+}
+
+#current1, #current2{
+width:40%;
+height: 100px;
+  background-color: white;
+}
+
+.section_de{
+padding: 30px;
+width: 100%;
+background-color:#6096ba;
+display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+align-items: center;
+
+}
+
+.score_1, .score_2 {
+
+  width:40%;
+  height: 100px;
+    background-color: beige;
+  }
+
+
+
+
+
+.compteur{
+  height: 100px;
+  width: 100px;
+  
+}
+
+
+
+
 
  }
