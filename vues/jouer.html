@@ -12,19 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
     <title>Jeu de dé</title>
 </head>
-<body>
+<body class="bodyJeu">
     <header>
         <div class="header">
             <h1>Jeu de Dé</h1>
             <p>Bienvenue ! </p>
-
+            
         </div>
 
         <nav>
-            <div id="navbar">
-                <a class="active" href="../index.html">Accueil</a>
+            <div class="navMenu">
+                <a  href="../index.html">Accueil</a>
                 <a href="../vues/jouer.html">Jouer</a>
                 <a href="./vues/contact.html">Contact</a>
+                <div class="dot"></div>
               </div>
         </nav>
 
@@ -45,12 +46,12 @@
 
                 <div class="section_joueurs">
          <!------------Joueur 1--------->
-                    <div class="joueur_1">
-                        <h2>Joueur 1</h2> <span id="iconPlayer1" class="iconify" data-icon="game-icons:dice-target" style="color: white;" data-width="30" data-height="30"></span>
+                    <div class="joueur_1  grise">
+                        <h2>Joueur 1</h2>
                         <div class="score_1"></div> 
 
                         <div id="current1" class="container_joueur1">
-                            <p>score actuelle</p>
+                            <p>Score actuel</p>
                         </div>
 
                     </div>
@@ -61,17 +62,17 @@
                         <div class="compteur"><img src="../images/dice-1.svg" alt="" id="des"></div>
                         
                         <a class="my-button" id="lancerde"> <span class="iconify" data-icon="ion:dice" data-width="30"></span>Lancer le dé</a>
-                        <button id="boutonHold"> Garder</button>
+                        <button id="boutonHold"><span class="iconify" data-icon="clarity:inbox-line" style="color: white;" data-width="30" data-height="30"></span> Garder</button>
 
                     </div>
 
 
-                    <div class="joueur_2">
-                        <h2>Joueur 2</h2> <span  id="iconPlayer2" class="iconify" data-icon="game-icons:dice-target" style="color: white;" data-width="30" data-height="30"></span>
+                    <div class="joueur_2  grise">
+                        <h2>Joueur 2</h2> 
                         <div class="score_2"></div> 
 
                         <div id="current2" class="container_joueur2">
-                            <p>score actuelle</p>
+                            <p>Score actuel</p>
                         </div>
                         
                     </div>
@@ -86,7 +87,11 @@
 
     <footer>
         <div class="footer">
-
+            <div class="iconFooter">
+                <span class="iconify"  data-icon="bi:instagram"  style="color: white;" data-width="40" data-height="40"></span>
+                <span class="iconify" data-icon="lucide:facebook" style="color: white;" data-width="40" data-height="40"></span>
+                <span class="iconify" data-icon="ri:twitter-line" style="color: white;" data-width="40" data-height="40"></span>
+                </div>
         </div>
     </footer>
 

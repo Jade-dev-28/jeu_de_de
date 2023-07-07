@@ -19,24 +19,32 @@ lancerDe.addEventListener('click', function(){
 
   if (nombreAleatoire === 1) {
     roundScore = 0;
-    document.getElementById('current' + currentPlayer).textContent = "Score actuel : " + roundScore;
+    document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
     switchPlayer();
   } else {
     roundScore += nombreAleatoire;
-    document.getElementById('current' + currentPlayer).textContent = "Score actuel : " + roundScore;
+    document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
   }
 }
 function switchPlayer() {
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel : 0";
-  currentPlayer = currentPlayer === 1 ? 2 : 1;
+  document.getElementById('current' + currentPlayer).textContent = "Score actuel :   0";
+  if (currentPlayer === 1) {
+    currentPlayer = 2;
+    document.querySelector('.joueur_1').classList.add('grise'); // Ajouter la classe grise à la div du joueur 1
+    document.querySelector('.joueur_2').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 2
+  } else {
+    currentPlayer = 1;
+    document.querySelector('.joueur_2').classList.add('grise'); // Ajouter la classe grise à la div du joueur 2
+    document.querySelector('.joueur_1').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 1
+  }  
   roundScore = 0;
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel : " + roundScore;
+  document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
   
 }
 
 });
 
-
+/*_____________________FONCTION GARDER_______________________*/
 var holdButton = document.getElementById('boutonHold');
 holdButton.addEventListener('click', function() {
   if (isGameActive) {
@@ -56,6 +64,24 @@ holdButton.addEventListener('click', function() {
     }
   }
 });
+
+function switchPlayer() {
+  document.getElementById('current' + currentPlayer).textContent = "Score actuel : 0";
+  if (currentPlayer === 1) {
+    currentPlayer = 2;
+    document.querySelector('.joueur_1').classList.add('grise'); // Ajouter la classe grise à la div du joueur 1
+    document.querySelector('.joueur_2').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 2
+  } else {
+    currentPlayer = 1;
+    document.querySelector('.joueur_2').classList.add('grise'); // Ajouter la classe grise à la div du joueur 2
+    document.querySelector('.joueur_1').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 1
+  }
+  roundScore = 0;
+  document.getElementById('current' + currentPlayer).textContent = "Score actuel : " + roundScore;
+}
+
+
+
 
 
 
@@ -79,41 +105,15 @@ isGameActive = true;
 
 document.querySelector('.joueur_1 h2').textContent = "Joueur 1";
 document.querySelector('.joueur_2 h2').textContent = "Joueur 2";
+document.querySelector('.joueur_1').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 1
+  document.querySelector('.joueur_2').classList.add('grise'); // Ajouter la classe grise à la div du joueur 2
+
 
 });
+// Exécuter la fonction une fois au chargement de la page pour appliquer les conditions par défaut
+nouvellePartie.click();
 
 
- //Fonction qui permet d'afficher l'icone du joueur actif 
  
- /*function updateActivePlayerIcon() {
-  var iconPlayer1 = document.getElementById('iconPlayer1');
-  var iconPlayer2 = document.getElementById('iconPlayer2');
+ 
 
-  if (currentPlayer === 1) {
-      iconPlayer1.setAttribute('data-icon', 'game-icons:dice-target');
-      iconPlayer1.style.color = 'white';
-      iconPlayer2.removeAttribute('data-icon');
-      iconPlayer2.style.color = 'transparent';
-  } else {
-      iconPlayer1.removeAttribute('data-icon');
-      iconPlayer1.style.color = 'transparent';
-      iconPlayer2.setAttribute('data-icon', 'game-icons:dice-target');
-      iconPlayer2.style.color = 'white';
-  }
-
-  // Recharger les icônes pour les afficher correctement
-  iconify.scan();
-}
-
-
-
-
-function switchPlayer() {
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel : 0";
-  currentPlayer = currentPlayer === 1 ? 2 : 1;
-  roundScore = 0;
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel : " + roundScore;
-
-  updateActivePlayerIcon();
-}
-*/

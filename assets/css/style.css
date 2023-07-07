@@ -1,3 +1,9 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
+
 body{
 margin: 0;
 padding: 0;
@@ -6,6 +12,16 @@ width: 100%;
 background-color:#3c096c;
 }
 
+.bodyJeu{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-image:url(../../images/body-background.avif) ;
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+  
 
 .header {
     background-image: url(../../images/de_header.jpg);
@@ -19,12 +35,57 @@ background-color:#3c096c;
   }
 
 h1{
-  font-family:'Rock 3D', cursive;
+  
   font-size: x-large;
   color: #ddd;
 }
   
-  #navbar {
+nav {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #fddb3a;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover ~ .dot {
+  opacity: 1;
+}
+
+
+
+/*  #navbar {
     overflow: hidden;
     background-color:#00171f;
     display: flex;
@@ -50,7 +111,7 @@ h1{
   #navbar a.active {
     background-color: #5ba5e1;
     color: white;
-  }
+  }*/
 
   .container {
     width: 200px ;
@@ -200,8 +261,13 @@ h1{
 
 /*_____Section joueurs___*/
 
+.grise {
+  opacity: 0.5; /* Réduire l'opacité pour afficher le joueur non actif en grisé */
+}
+
+
 h2 {
-font-family: 'Rock 3D', cursive;
+
 color: #ddd;
 
 }
@@ -213,9 +279,9 @@ color: #ddd;
 }
     
 .section_jeu {
-  background-color: #fff;
+  
   width: 90%;
-  margin: 50px;
+  margin: auto;
   height: 500PX;
   display: flex;
   flex-direction: row;
@@ -236,6 +302,7 @@ display:flex;
 flex-direction: column;
 justify-content:space-around;
 align-items: center;
+border-radius: 20px;
 
 }
 
@@ -244,11 +311,12 @@ width:40%;
 height: 100px;
   background-color: rgba(255, 255, 255, 0.547);
   border-radius: 20px;
+  text-align: center;
 }
 
 .section_de{
 
-background-color:black;
+
 width: 50%;
 display: flex;
  flex-direction: column;
@@ -257,12 +325,22 @@ align-items: center;
 
 }
 
+
+#boutonHold{
+  margin-top: 10px;
+  width: 90px;
+  border-color: white;
+  color: #fff;
+  background-color: dimgray;
+}
+
 .score_1, .score_2 {
 
   width:40%;
   height: 100px;
     background-color: rgba(255, 255, 255, 0.547);
     border-radius: 10px;
+    text-align: center;
     
   }
 
@@ -318,7 +396,15 @@ a.my-button{
   margin-top: 120px;
   background-color: #000000;
 }
+ .iconFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+ }
 
+ .iconFooter span {
+  margin-right: 50px;
+ }
 
 
 /*____________Régles du Jeu____________*/
@@ -341,8 +427,80 @@ a.my-button{
     color: #f2f2f2;
 }
 
+/*__________PAGE CONTACT_____________*/
+.element_contact{
+  height: 1000px;
+}
 
+div, textarea, input {
+  box-sizing: border-box;
+}
 
+.container_formulaire {
+  max-width: 600px;
+  min-width: 324px;
+  margin: 50px auto 0px;
+
+  border: 1px solid lighten(#ccc, 1%);
+  border-bottom: 3px solid #ccc;
+}
+
+.row {
+  width: 100%;
+  padding: 0 2.5em;
+}
+
+.row.header {
+  padding: 1.5em 2.5em;
+  background: url("../../images/de_contact.jpg") top -80px;
+  color: #fff;
+  width: 600px;
+}
+
+.row.body {
+  padding: 0.5em 2.5em 1em;
+  width :600px;
+  height: 500px;
+  background-color: #000;
+}
+
+form {
+  max-width: 541px;
+  margin: 0 auto;
+  color: white;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 90%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background-color: #c9d3c9;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
 
  /*___________VERSION MOBILE__________*/
  @media only screen and (max-width: 767px) {
@@ -419,90 +577,63 @@ a.my-button{
 
 /*______PAGE JOUER_____*/
 
-.element_jeu{
-
-  height: 724px;
-  width: 100%;
-
+.new_game {
+  flex-direction: column; /* Affichage en colonne */
+  align-items: center; /* Centrer les éléments horizontalement */
+  margin: 20px; /* Réduction de la marge */
 }
 
-.new_game{
-  display: flex;
-  justify-content: center;
-  margin: 50px;
-}
-    
 .section_jeu {
-  background-color: #fff;
-  width: 300px;
-  height: 500px;
-  margin: 50px;
-  display: flex;
-  flex-direction: column;
- 
+  width: auto; /* Ajustement automatique de la largeur */
+  height: auto; /* Ajustement automatique de la hauteur */
+}
+
+.section_joueurs {
+  flex-direction: column; /* Affichage en colonne */
+  align-items: center;
+}
+
+img#des {
+  height: 60px;
+  width: 60px;
+}
+
+a#lancerde{
+height: 10px;
 
 }
 
-.section_joueurs{
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
+.joueur_1,
+.joueur_2 {
+  width: 90%; /* Occuper toute la largeur */
+  height: auto; /* Ajustement automatique de la hauteur */
+  align-items: center;
 }
 
-.joueur_1, .joueur_2{
-  width: 100%;
-  height: 40%;
-background-color: #5ba5e1;
-display:flex;
-flex-direction: column;
-justify-content:space-around;
-align-items: center;
-
+#current1,
+#current2 {
+  width: 80%; /* Réduction de la largeur */
+  margin: 10px 0; /* Réduction de la marge verticale */
 }
 
-#current1, #current2{
-width:40%;
-height: 100px;
-  background-color: white;
+.section_de {
+  width: 100%; /* Occuper toute la largeur */
+  height: auto; /* Ajustement automatique de la hauteur */
+  padding: 10px; /* Réduction du padding */
 }
 
-.section_de{
-padding: 30px;
-width: 80%;
-height: 10%;
-background-color:#6096ba;
-display: flex;
- flex-direction: column;
- justify-content: space-evenly;
-align-items: center;
-
+.score_1,
+.score_2 {
+  width: 80%; /* Réduction de la largeur */
+  margin: 10px 0; /* Réduction de la marge verticale */
 }
 
-.score_1, .score_2 {
-
-  width:40%;
-  height: 100px;
-    background-color: beige;
-  }
-
-
-
-
-
-.compteur{
-  height: 100px;
-  width: 100px;
-  
+.compteur {
+  margin: 10px 0; /* Réduction de la marge verticale */
+  width: 60px;
+  height: 60px;
 }
 
-.nouvelle_partie {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
- 
 
 .footer{
   width: 100%;
@@ -510,5 +641,26 @@ align-items: center;
   margin-top:50px; 
 }
 
+/*__________PAGE CONTACT________*/
 
- }
+.container_formulaire,
+  .row.header,
+  .row.body {
+    width:95%;
+    max-width: none;
+  }
+  
+  .row.header {
+    background-position: top center;
+  }
+  
+  form {
+    width: 90%;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+  }
+}
+
+ 
