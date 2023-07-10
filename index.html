@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="../assets/js/script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
-    <title>Jeu de dé</title>
-</head>
-<body>
-    <header>
-        <div class="header">
-            <h1>Jeu de Dé</h1>
-            <p>Bienvenue ! </p>
-            <nav>
-              
-    
-
-        </div>
-        <div id="navbar">
-            <a class="active" href="index.html">Accueil</a>
-            <a href="vues/jouer.html">Jouer</a>
-            <a href="./vues/contact.html">Contact</a>
-          </div>
-    </nav>
-
-        
-    </header>
-
-    <main>
-        <div class="element_regles">
-            <div class=" regles_jeu">
-                <h2>Règles du jeu</h2>
-                Le jeu comprend 2 joueurs sur un seul et même écran. Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL). <br>
-                À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le résultat d’un lancer est ajouté au ROUND. Lors de son tour, le joueur peut décider à tout moment de:
-                Cliquer sur l’option “Garder”, qui permet d’envoyer les points du ROUND vers le GLOBAL. <br>
-                Ce sera alors le tour de l’autre joueur.
-                Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.<br>
-                Le premier joueur qui atteint les 100 points sur global gagne le jeu.
-            </div>
-
-
-        <div class="main_element">
-        <div class="container">
-            <div class="cube">
-                <div class="face front"></div>
-                <div class="face back"></div>
-                <div class="face right"></div>
-                <div class="face left"></div>
-                <div class="face top"></div>
-                <div class="face bottom"></div>
-            </div>
-        </div>
-
-        <div class="bouton_jouer">
-           <a href="vues/jouer.html"> <button class="btn" >Jouer ! </button></a>
-        </div>
-    </div>
-    </main>
-    <footer>
-        <div class="footer">
-            <div class="iconFooter">
-                <span class="iconify"  data-icon="bi:instagram"  style="color: white;" data-width="40" data-height="40"></span>
-                <span class="iconify" data-icon="lucide:facebook" style="color: white;" data-width="40" data-height="40"></span>
-                <span class="iconify" data-icon="ri:twitter-line" style="color: white;" data-width="40" data-height="40"></span>
-                </div>
-        </div>
-    </footer>
-</body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="../assets/js/script.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+		<title>Jeu de dé</title>
+	</head>
+	<body >
+		<header>
+			<div class="header">
+				<h1>Jeu de Dé</h1>
+			</div>
+			<nav>
+				<div id="navbar">
+					<a class="active" href="index.html">Accueil</a>
+					<a href="vues/jouer.html">Jouer</a>
+					<a href="./vues/contact.html">Contact</a>
+					<div id="indicator"></div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="main_element">
+				<div class="element_regles">
+					<div class=" regles_jeu">
+						<h2>Règles du jeu</h2>
+						Le jeu comprend 2 joueurs sur un seul et même écran. Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL). 
+						<br>
+						<br>
+						À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. 
+						<br>
+						<br>
+						Le résultat d’un lancer est ajouté au ROUND. Lors de son tour, le joueur peut décider à tout moment de:Cliquer sur l’option “Garder”, qui permet d’envoyer les points du ROUND vers le GLOBAL. 
+						<br>
+						<br>
+						Ce sera alors le tour de l’autre joueur.Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+						<br>
+						<br>
+						Le premier joueur qui atteint les 100 points sur global gagne le jeu.
+					</div>
+					<div class="container">
+						<div class="cube">
+							<div class="face front"></div>
+							<div class="face back"></div>
+							<div class="face right"></div>
+							<div class="face left"></div>
+							<div class="face top"></div>
+							<div class="face bottom"></div>
+						</div>
+					</div>
+					<div class="bouton_jouer">
+						<a href="vues/jouer.html"><button class="btn" >Jouer ! </button></a>
+					</div>
+				</div>
+			</main>
+			<footer>
+				<div class="footer">
+					<div class="iconFooter">
+						<span class="iconify"  id="logo" data-icon="bi:instagram"  style="color: white;" data-width="40" data-height="40"></span>
+						<span class="iconify"  id="logo" data-icon="lucide:facebook" style="color: white;" data-width="40" data-height="40"></span>
+						<span class="iconify"  id="logo" data-icon="ri:twitter-line" style="color: white;" data-width="40" data-height="40"></span>
+					</div>
+				</div>
+			</footer>
+		</body>
+	</html>
 
 
-<!--test push -->
+
     

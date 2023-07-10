@@ -9,7 +9,9 @@ margin: 0;
 padding: 0;
 height: 100%;
 width: 100%;
-background-color:#3c096c;
+background-image: url(../../images/backgroundCarpe3.png);
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 .bodyJeu{
@@ -17,28 +19,38 @@ background-color:#3c096c;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-image:url(../../images/body-background.avif) ;
+ background-image: url(../../images/backgroundCarpe2.png);
   background-repeat: no-repeat;
-  background-position: cover;
+  background-position: center;
+  background-size: cover;
 }
-  
+
+
 
 .header {
-    background-image: url(../../images/de_header.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    height: 200px;
-    margin-top: -14px;
-  
-  }
-
-h1{
-  
-  font-size: x-large;
-  color: #ddd;
+  background-color: white;
+  text-align: center;
+  height: 200px;
+  margin-top: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+h1 {
+  font-family: 'Caprasimo', cursive;
+  font-size: xxx-large;
+ /* color: black;*/
+  margin: 0;
+  background-image: linear-gradient(to right, #d3b2d3, #94bbe9);
+  -webkit-background-clip: text; /* Pour les navigateurs basés sur WebKit */
+  -moz-background-clip: text; /* Pour les navigateurs basés sur Gecko */
+  background-clip: text;
+  color: transparent; /* Rend le texte transparent */
+}
+
+
+
   
 nav {
   margin: 50px;
@@ -46,72 +58,115 @@ nav {
   justify-content: center;
 }
 
-.navMenu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 400px;
+
+nav {
+  position: absolute;
+  top: 19%;
+  right: 0;
+  left: 0;
+  width: 319px;
+  display: table;
+  margin: 0 auto;
+  transform: translateY(-50%);
 }
 
-.navMenu a {
-  color: #f6f4e6;
+nav a {
+  position: relative;
+  width: 33.333%;
+  display: table-cell;
+  text-align: center;
+  color: #000000;
   text-decoration: none;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  -webkit-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
 }
 
-.navMenu a:hover {
-  color: #fddb3a;
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
 }
 
-.navMenu .dot {
+nav a:before {
+  top: 0;
+  left: 10px;
   width: 6px;
   height: 6px;
-  background: #fddb3a;
-  border-radius: 50%;
-  opacity: 0;
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
-.navMenu a:hover ~ .dot {
-  opacity: 1;
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(3):after {
+  background-color: palevioletred;
+}
+
+#indicator {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.2s ease left;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 34%;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  left: 70%;
+  background: linear-gradient(130deg, purple, palevioletred);
 }
 
 
 
-/*  #navbar {
-    overflow: hidden;
-    background-color:#00171f;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  #navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  #navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  #navbar a.active {
-    background-color: #5ba5e1;
-    color: white;
-  }*/
+
 
   .container {
     width: 200px ;
@@ -121,6 +176,12 @@ nav {
   }
 
 
+  .main_element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 110px;
+  }
 
 
 
@@ -183,9 +244,12 @@ nav {
     .bouton_jouer{
       display: flex;
       justify-content: center;
-      margin: 200px;
+      margin: 150px;
+      
     }
-
+ .bouton_jouer a {
+  text-decoration: none;
+ }
 
     .btn{
     
@@ -193,10 +257,10 @@ nav {
     font-weight: 0;
     font-size: 14px;
     color: #fff;
-    background-color:black;
+    background-color:#5e548e;
     padding: 10px 30px;
-    border: 2px solid #0066cc;
-    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border: 2px solid #5e548e;
+    box-shadow: #d3b2d3 0px 0px 0px 0px;
     border-radius: 50px;
     transition : 1000ms;
     transform: translateY(0);
@@ -206,6 +270,7 @@ nav {
     cursor: pointer;
     width: 200px;
     justify-content: center;
+   
     }
     
     .btn:hover{
@@ -214,8 +279,9 @@ nav {
     padding: 10px 50px;
     transform : translateY(-0px);
     background-color: #fff;
-    color: #0066cc;
-    border: solid 2px #0066cc;
+    color:#5e548e;
+    border: solid 2px #5e548e;
+  
     }
     
     
@@ -234,9 +300,9 @@ nav {
     font-weight: 0;
     font-size: 14px;
     color: #fff;
-    background-color: #0066CC;
+    background-color: #5e548e;
     padding: 10px 30px;
-    border: 2px solid #0066cc;
+    border: 2px solid #5e548e;
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
     border-radius: 50px;
     transition : 1000ms;
@@ -255,8 +321,8 @@ nav {
     padding: 10px 50px;
     transform : translateY(-0px);
     background-color: #fff;
-    color: #0066cc;
-    border: solid 2px #0066cc;
+    color: #5e548e;
+    border: solid 2px #5e548e;
     }
 
 /*_____Section joueurs___*/
@@ -268,13 +334,14 @@ nav {
 
 h2 {
 
-color: #ddd;
+color: white;
 
 }
 .element_jeu{
 
   height: 100%;
   width: 100%;
+  margin-top: 100px;
 
 }
     
@@ -285,8 +352,7 @@ color: #ddd;
   height: 500PX;
   display: flex;
   flex-direction: row;
- /* justify-content: space-between;*/
-
+ 
 }
 
 .section_joueurs{
@@ -296,7 +362,8 @@ flex-direction: row;
 }
 
 .joueur_1, .joueur_2{
-background-color: #5ba5e1;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(211,178,211,1) 30%, rgba(191,181,218,1) 52%, rgba(148,187,233,1) 100%);
 width: 50%;
 display:flex;
 flex-direction: column;
@@ -312,6 +379,7 @@ height: 100px;
   background-color: rgba(255, 255, 255, 0.547);
   border-radius: 20px;
   text-align: center;
+  color: white;
 }
 
 .section_de{
@@ -328,10 +396,13 @@ align-items: center;
 
 #boutonHold{
   margin-top: 10px;
-  width: 90px;
-  border-color: white;
+  width: 200px;
+  border-color: #5e548e;
   color: #fff;
-  background-color: dimgray;
+  background-color: #5e548e;
+  border-radius: 10px;
+  font-size: 18px ;
+  padding: 10px ;
 }
 
 .score_1, .score_2 {
@@ -341,6 +412,8 @@ align-items: center;
     background-color: rgba(255, 255, 255, 0.547);
     border-radius: 10px;
     text-align: center;
+    color: black;
+    font-size:x-large ;
     
   }
 
@@ -402,9 +475,10 @@ a.my-button{
   justify-content:center;
  }
 
- .iconFooter span {
-  margin-right: 50px;
- }
+#logo {
+  margin-left: 30px;
+  margin-top: 20px;
+ }*/
 
 
 /*____________Régles du Jeu____________*/
@@ -418,18 +492,31 @@ a.my-button{
 
 
 .regles_jeu{
-  width: 720px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin-top: 50px;
+  padding: 30px;
     text-align: center;
     margin: 100px;
-    color: #f2f2f2;
+    color: #10002b;
+    font-size: x-large;
 }
 
 /*__________PAGE CONTACT_____________*/
 .element_contact{
   height: 1000px;
+  margin-top: 200px;
+}
+
+#titreFormulaire {
+  font-family: 'Caprasimo', cursive;
+  color: #7d5ee3;
+  font-size: xxx-large;
+
+}
+
+#question {
+color: #000;
+font-size: 20px;
+font-weight: 400;
 }
 
 div, textarea, input {
@@ -440,28 +527,32 @@ div, textarea, input {
   max-width: 600px;
   min-width: 324px;
   margin: 50px auto 0px;
-
   border: 1px solid lighten(#ccc, 1%);
-  border-bottom: 3px solid #ccc;
+ 
 }
 
-.row {
+.row.header{
   width: 100%;
   padding: 0 2.5em;
+ 
+ 
 }
 
-.row.header {
+#headerFormulaire {
   padding: 1.5em 2.5em;
-  background: url("../../images/de_contact.jpg") top -80px;
+  background-image: url("../../images/backgroundCarpe.png");
   color: #fff;
   width: 600px;
+  background-position: cover;
+  background-size: cover;
+  
 }
 
 .row.body {
   padding: 0.5em 2.5em 1em;
   width :600px;
   height: 500px;
-  background-color: #000;
+  background-color: #5e548e;
 }
 
 form {
@@ -516,17 +607,7 @@ input[type="submit"]:hover {
 
 
 /*____PAGE ACCUEIL____*/
-  .regles_jeu{
-    width: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      margin: 10px;
-      color: #f2f2f2;
-  }
   
-
 
   .cube {
     width: 100%;
@@ -573,14 +654,35 @@ input[type="submit"]:hover {
     background-image:url(../../images/face4.png);
     transform: rotateX(-180deg) translateZ(100px);
   }
+  .main_element{
+    margin-top: 0px;
+  }
+
+  .element_regles {
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  
+  
+  .regles_jeu{
+    margin-top: 50px;
+    padding: 30px;
+      text-align: center;
+      margin: 50px;
+      color: #f2f2f2;
+      width: 300px;
+      font-size: inherit;
+  }
 
 
 /*______PAGE JOUER_____*/
 
 .new_game {
-  flex-direction: column; /* Affichage en colonne */
-  align-items: center; /* Centrer les éléments horizontalement */
-  margin: 20px; /* Réduction de la marge */
+  flex-direction: column; 
+  align-items: center; 
+  margin: 20px; 
 }
 
 .section_jeu {
@@ -589,7 +691,7 @@ input[type="submit"]:hover {
 }
 
 .section_joueurs {
-  flex-direction: column; /* Affichage en colonne */
+  flex-direction: column;
   align-items: center;
 }
 
@@ -605,31 +707,31 @@ height: 10px;
 
 .joueur_1,
 .joueur_2 {
-  width: 90%; /* Occuper toute la largeur */
-  height: auto; /* Ajustement automatique de la hauteur */
+  width: 90%; 
+  height: auto; 
   align-items: center;
 }
 
 #current1,
 #current2 {
-  width: 80%; /* Réduction de la largeur */
-  margin: 10px 0; /* Réduction de la marge verticale */
+  width: 80%; 
+  margin: 10px 0; 
 }
 
 .section_de {
-  width: 100%; /* Occuper toute la largeur */
-  height: auto; /* Ajustement automatique de la hauteur */
-  padding: 10px; /* Réduction du padding */
+  width: 100%; 
+  height: auto; 
+  padding: 10px; 
 }
 
 .score_1,
 .score_2 {
-  width: 80%; /* Réduction de la largeur */
-  margin: 10px 0; /* Réduction de la marge verticale */
+  width: 80%; 
+  margin: 10px 0; 
 }
 
 .compteur {
-  margin: 10px 0; /* Réduction de la marge verticale */
+  margin: 10px 0; 
   width: 60px;
   height: 60px;
 }
@@ -643,24 +745,23 @@ height: 10px;
 
 /*__________PAGE CONTACT________*/
 
-.container_formulaire,
-  .row.header,
-  .row.body {
-    width:95%;
-    max-width: none;
-  }
-  
-  .row.header {
-    background-position: top center;
-  }
-  
-  form {
-    width: 90%;
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-  }
+
+.container_formulaire {
+  max-width: 100%;
+  margin: 50px 10px 0;
 }
 
- 
+#headerFormulaire,
+.row.body {
+  width: 100%;
+}
+
+input[type="submit"] {
+  width: 100%;
+}
+
+}
+
+
+
+ }

@@ -4,29 +4,37 @@ var score_2 = 0;
 var current2 = 0;
 var currentPlayer = 1; // Joueur 1 commence
 var roundScore = 0;
-var isGameActive = true;
+var jeuActif = true;
 var lancerDe = document.getElementById('lancerde');
 var des = document.getElementById('des');
 var nouvellePartie = document.querySelector('.btn_newgame')
 
 
 lancerDe.addEventListener('click', function(){
-  if (isGameActive) {
+  if (jeuActif) {
+    //génère un nombre aléatoire entre 1 et 6
   var nombreAleatoire = Math.floor(Math.random()*6) + 1;
+ // modifie la source de l'image "des" en fonction du nombre aléatoire généré
   des.src = '../images/dice-'+ nombreAleatoire +'.svg';
+  //permet de rendre visble les "des"
   des.style.display = 'block';
   console.log('click'); 
 
-  if (nombreAleatoire === 1) {
-    roundScore = 0;
+  if (nombreAleatoire === 1) { // si le nombre aléatoire est strictement égale à 0
+    roundScore = 0; // le score reviens à zéro
+
+    //met à jour les éléments avec l'id 'current' + le nouveau score actuel qui est zero 
     document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
-    switchPlayer();
+    //appelle la fonction changementJoueur qui permet de passer au joueur suivant 
+    changementJoueur();
   } else {
+    // ajoute le nombre aléatoire généré à la variable "roundScore", ce qui permet d'incrémenter le score actuel du joueur en fonction du nombre obtenu sur le dé.
     roundScore += nombreAleatoire;
+    //permet d'afficher textuellement le score actuel
     document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
   }
 }
-function switchPlayer() {
+function changementJoueur() {
   document.getElementById('current' + currentPlayer).textContent = "Score actuel :   0";
   if (currentPlayer === 1) {
     currentPlayer = 2;
@@ -45,27 +53,31 @@ function switchPlayer() {
 });
 
 /*_____________________FONCTION GARDER_______________________*/
+
+
+//sélectionne l'élément avec l'id "boutonHold" et le stocke dans la variable "holdButton"
 var holdButton = document.getElementById('boutonHold');
+//lorsqu'on clique sur le holdButton
 holdButton.addEventListener('click', function() {
-  if (isGameActive) {
+  if (jeuActif) {
     if (currentPlayer === 1) {
-      score_1 += roundScore;
-      document.querySelector('.score_1').textContent = "Score global : " + score_1;
+      score_1 += roundScore; //ajoute le score actuel (roundScore) au score global du joueur 1 (score_1)
+      document.querySelector('.score_1').textContent = "Score global : " + score_1; // permet d'afficher textuellement le nouveau score gobal du joueur 1
     } else {
-      score_2 += roundScore;
+      score_2 += roundScore;  //ajoute le score actuel (roundScore) au score global du joueur 2 (score_2).
       document.querySelector('.score_2').textContent = "Score global : " + score_2;
     }
-
+//si un desdeux jouers obient un score globale de 100 ou plus 
     if (score_1 >= 100 || score_2 >= 100) {
-      isGameActive = false;
-      document.querySelector('.joueur_' + currentPlayer + ' h2').textContent = "Joueur " + currentPlayer + " a gagné !";
+      jeuActif = false; // le jeu obient la valeur false( donc s'arrete )
+      document.querySelector('.joueur_' + currentPlayer + ' h2').textContent = "Joueur " + currentPlayer + " a gagné !"; //affichele joueur gagnant 
     } else {
-      switchPlayer();
+      changementJoueur();
     }
   }
 });
 
-function switchPlayer() {
+function  changementJoueur() {
   document.getElementById('current' + currentPlayer).textContent = "Score actuel : 0";
   if (currentPlayer === 1) {
     currentPlayer = 2;
@@ -101,7 +113,7 @@ document.getElementById('current2').textContent = "Score actuel : " + roundScore
 currentPlayer = 1 ;
 
 //Réinitialiser l'état du jeu 
-isGameActive = true;
+jeuActif = true;
 
 document.querySelector('.joueur_1 h2').textContent = "Joueur 1";
 document.querySelector('.joueur_2 h2').textContent = "Joueur 2";
