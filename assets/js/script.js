@@ -24,18 +24,18 @@ lancerDe.addEventListener('click', function(){
     roundScore = 0; // le score reviens à zéro
 
     //met à jour les éléments avec l'id 'current' + le nouveau score actuel qui est zero 
-    document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
+    document.getElementById('current' + currentPlayer).innerHTML = "Score actuel : <br>  " + roundScore;
     //appelle la fonction changementJoueur qui permet de passer au joueur suivant 
     changementJoueur();
   } else {
     // ajoute le nombre aléatoire généré à la variable "roundScore", ce qui permet d'incrémenter le score actuel du joueur en fonction du nombre obtenu sur le dé.
     roundScore += nombreAleatoire;
     //permet d'afficher textuellement le score actuel
-    document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
+    document.getElementById('current' + currentPlayer).innerHTML = "Score actuel : <br> " + roundScore;
   }
 }
 function changementJoueur() {
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel :   0";
+  document.getElementById('current' + currentPlayer).innerHTML = "Score actuel : <br>  0";
   if (currentPlayer === 1) {
     currentPlayer = 2;
     document.querySelector('.joueur_1').classList.add('grise'); // Ajouter la classe grise à la div du joueur 1
@@ -46,7 +46,7 @@ function changementJoueur() {
     document.querySelector('.joueur_1').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 1
   }  
   roundScore = 0;
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel :  " + roundScore;
+  document.getElementById('current' + currentPlayer).innerHTML = "Score actuel : <br>  " + roundScore;
   
 }
 
@@ -61,11 +61,11 @@ var holdButton = document.getElementById('boutonHold');
 holdButton.addEventListener('click', function() {
   if (jeuActif) {
     if (currentPlayer === 1) {
-      score_1 += roundScore; //ajoute le score actuel (roundScore) au score global du joueur 1 (score_1)
-      document.querySelector('.score_1').textContent = "Score global : " + score_1; // permet d'afficher textuellement le nouveau score gobal du joueur 1
+      score_1 = score_1 + roundScore; //ajoute le score actuel (roundScore) au score global du joueur 1 (score_1)
+      document.querySelector('.score_1').innerHTML = "Score global : <br> " + score_1; // permet d'afficher textuellement le nouveau score global du joueur 1
     } else {
-      score_2 += roundScore;  //ajoute le score actuel (roundScore) au score global du joueur 2 (score_2).
-      document.querySelector('.score_2').textContent = "Score global : " + score_2;
+      score_2 = score_2 + roundScore;  //ajoute le score actuel (roundScore) au score global du joueur 2 (score_2).
+      document.querySelector('.score_2').innerHTML = "Score global :<br> " + score_2;
     }
 //si un desdeux jouers obient un score globale de 100 ou plus 
     if (score_1 >= 100 || score_2 >= 100) {
@@ -78,7 +78,7 @@ holdButton.addEventListener('click', function() {
 });
 
 function  changementJoueur() {
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel : 0";
+  document.getElementById('current' + currentPlayer).innerHTML = "Score actuel : <br>  0";
   if (currentPlayer === 1) {
     currentPlayer = 2;
     document.querySelector('.joueur_1').classList.add('grise'); // Ajouter la classe grise à la div du joueur 1
@@ -89,7 +89,7 @@ function  changementJoueur() {
     document.querySelector('.joueur_1').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 1
   }
   roundScore = 0;
-  document.getElementById('current' + currentPlayer).textContent = "Score actuel : " + roundScore;
+  document.getElementById('current' + currentPlayer).innerHTML = "Score actuel : <br> " + roundScore;
 }
 
 
@@ -104,10 +104,10 @@ score_2 = 0;
 roundScore = 0;
 
 //Réinitialiser les affichages des scores
-document.querySelector('.score_1').textContent = "Score gobal: " + score_1;
-document.querySelector('.score_2').textContent = "Score gobal: " + score_2;
-document.getElementById('current1').textContent = "Score actuel : " + roundScore;
-document.getElementById('current2').textContent = "Score actuel : " + roundScore;
+document.querySelector('.score_1').innerHTML = "Score global:  <br>" + score_1;
+document.querySelector('.score_2').innerHTML = "Score global: <br>" + score_2;
+document.getElementById('current1').innerHTML = "Score actuel : <br>" + roundScore;
+document.getElementById('current2').innerHTML = "Score actuel : <br>" + roundScore;
 
 //Réinitialiser le joueur actuel
 currentPlayer = 1 ;
@@ -118,7 +118,7 @@ jeuActif = true;
 document.querySelector('.joueur_1 h2').textContent = "Joueur 1";
 document.querySelector('.joueur_2 h2').textContent = "Joueur 2";
 document.querySelector('.joueur_1').classList.remove('grise'); // Supprimer la classe grise de la div du joueur 1
-  document.querySelector('.joueur_2').classList.add('grise'); // Ajouter la classe grise à la div du joueur 2
+document.querySelector('.joueur_2').classList.add('grise'); // Ajouter la classe grise à la div du joueur 2
 
 
 });

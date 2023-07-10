@@ -1,80 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="../assets/js/script.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
-    <title>Jeu de dé</title>
-</head>
-<body >
-    
-    <header>
-        <div class="header">
-            <h1>Jeu de Dé</h1>
-        </div>
-
-        <nav>
-            <div id="navbar">
-                <a class="active" href="../index.html">Accueil</a>
-                <a href="../vues/jouer.html">Jouer</a>
-                <a href="./vues/contact.html">Contact</a>
-              </div>
-        </nav>
-
-
-    </header>
-
-    <main>
-    <div class="element_contact">
-        <div class="container_formulaire">
-            <div  id="headerFormulaire" class="row ">
-              <h2 id="titreFormulaire">Contactez nous&nbsp;</h2>
-              <p id="question"> Une question ? N'hesitez pas !</p>
-            </div>
-            <div class="row body">
-                <form action="traitement.php" method="POST">
-                    <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom" required>
-                
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom" required>
-                
-                    <label for="email">Adresse email :</label>
-                    <input type="email" id="email" name="email" required>
-                
-                    <label for="sujet">Sujet :</label>
-                    <input type="text" id="sujet" name="sujet" required>
-                
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" required></textarea>
-                
-                    <input type="submit" value="Envoyer">
-                  </form>
-               
-            
-            </div>
-          </div>
-        </div>
-
-    </main>
-
-    <footer>
-        <div class="footer">
-            <div class="iconFooter">
-            <span class="iconify"  id="logo" data-icon="bi:instagram"  style="color: white;" data-width="40" data-height="40"></span>
-            <span class="iconify"  id="logo" data-icon="lucide:facebook" style="color: white;" data-width="40" data-height="40"></span>
-            <span class="iconify"  id="logo" data-icon="ri:twitter-line" style="color: white;" data-width="40" data-height="40"></span>
-            </div>
-        </div>
-    </footer>
-
-
-</div>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../assets/css/style.css">
+		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+		<title>Jeu de dé</title>
+	</head>
+	<body >
+		<header>
+			<div class="header">
+				<h1>Jeu de Dé</h1>
+			</div>
+			<nav>
+				<div id="navbar">
+					<a class="active" href="../index.html">Accueil</a>
+					<a href="../vues/jouer.html">Jouer</a>
+					<a href="./vues/contact.html">Contact</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="element_contact">
+				<div class="container_formulaire">
+					<div  id="headerFormulaire" class="row ">
+						<h2 id="titreFormulaire">Contactez nous&nbsp;</h2>
+						<p id="question">
+							 Une question ? N'hesitez pas !
+						</p>
+					</div>
+					<div class="row body">
+						<form action="traitement.php" method="POST">
+							<label for="nom">Nom :</label>
+							<input type="text" id="nom" name="nom" required>
+							<label for="prenom">Prénom :</label>
+							<input type="text" id="prenom" name="prenom" required>
+							<label for="email">Adresse email :</label>
+							<input type="email" id="email" name="email" required>
+							<label for="sujet">Sujet :</label>
+							<input type="text" id="sujet" name="sujet" required>
+							<label for="message">Message :</label>
+							<textarea id="message" name="message" required></textarea>
+							<input type="submit" value="Envoyer">
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="footer">
+				<div class="iconFooter">
+					<span class="iconify"  id="logo" data-icon="bi:instagram"  style="color: white;" data-width="40" data-height="40"></span>
+					<span class="iconify"  id="logo" data-icon="lucide:facebook" style="color: white;" data-width="40" data-height="40"></span>
+					<span class="iconify"  id="logo" data-icon="ri:twitter-line" style="color: white;" data-width="40" data-height="40"></span>
+				</div>
+			</div>
+		</footer>
+	</div>
 </body>
 </html>
